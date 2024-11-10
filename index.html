@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations!</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            background: url('path-to-escapeology-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+        }
+        
+        .congrats-message {
+            font-size: 2em;
+            animation: fadeIn 2s;
+        }
+        
+        .code-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            font-size: 1.5em;
+            color: #ffcc00;
+            animation: fadeIn 2s 1s forwards;
+            opacity: 0;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="congrats-message">🎉 Congratulations! You've found the hidden code! 🎉</div>
+    
+    <div class="code-box" id="codeBox">Your unique code is: <span id="uniqueCode"></span></div>
+
+    <script>
+        // Function to generate a unique code (could be improved to fetch a server-generated code)
+        function generateCode() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let result = '';
+            for (let i = 0; i < 8; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+        
+        // Display the unique code when the page loads
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("uniqueCode").textContent = generateCode();
+            document.getElementById("codeBox").style.opacity = 1;
+        });
+    </script>
+</body>
+</html>
 
