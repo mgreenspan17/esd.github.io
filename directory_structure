@@ -1,0 +1,11 @@
+/your-project-root
+├── index.html           # Your main HTML file
+├── /images              # Folder for images and logos
+│   ├── logo.png
+│   ├── background.jpg
+│   └── other-image.png
+├── /css                 # Folder for CSS files
+│   └── style.css
+├── /js                  # Folder for JavaScript files (optional)
+│   └── script.js
+└── /assets              # (Optional) For other assets like fonts, PDFs, etc.
